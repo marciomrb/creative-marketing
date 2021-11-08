@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creative Marketing</title>
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+
+<body>
+
+  <header>
+   <div class="container">
+    <a class="logo" href="#"><img src="assets/images/logo.png" /></a>
+
+    <ul class="nav"> 
+      <li><a class="active" href="#">Home</a></li>
+      <li class="dropdown">
+        <a href="#">Service</a>
+
+        <ul class="dropdown-menu">
+          <li><a href="#">Serviço 1</a></li>
+          <li><a href="#">Serviço 2</a></li>
+          <li><a href="#">Serviço 3</a></li>
+        </ul>
+
+      </li>
+      <li><a href="#">Blog</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">FAQ</a></li>
+      <li id="searchButton" onclick="OpenModal()"><div class="inner"><img src="assets/images/search.svg" /></div></li>
+    </ul>
+
+   </div>
+  </header>
+
+
+  <section>
+    <div class="container">
+      <div class="formulario">
+
+        <h2><span>Subscribe Now</span> to Our Newsletter</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod<br> tempor incididunt ut labore et dolore magna aliqua. Ut enim ad<br> 
+          minim veniam, quis nostrud exercitation ullamco laboris.</p>
+
+          <form>
+            <input type="text" placeholder="Name" id="name">
+            <input type="email" placeholder="Email" id="email">
+            <button type="submit" onclick="SendMessage()">Send</button>
+          </form>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- search box -->
+  <div id="searchBox">
+    <img id="buttonClose" src="assets/images/close.svg" onclick="CloseModal()" />
+    <div class="search">
+      <label for="procurar">Procurar...</label>
+      <input type="search" id="procurar" />
+    </div>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

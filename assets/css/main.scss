@@ -1,0 +1,277 @@
+$primary: #20364b;
+$secondary: #fdc11f;
+$tertiary: #ffffff;
+$quaternary: #7b7b7b;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: $primary;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  background-image: url(../images/bg.png);
+  background-position: 50% 0%;
+  background-size: 90%;
+  background-repeat: no-repeat;
+}
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+.container {
+  max-width: 1750px;
+  width: 100%;
+  margin: 0 auto; 
+}
+
+header {
+  height: 200px;
+  display: flex;
+  align-items: center;
+   .container {
+     display: flex;
+     justify-content: space-between;
+     ul.nav {
+       display: flex;
+       align-items: center;
+       li {
+         list-style: none; 
+         &.dropdown {    
+           a {
+             display: flex;
+             align-items: center;        
+            &:before {
+              content: '';
+              display: inline-flex;
+              position: absolute;
+              right: -5px;
+              background-image: url(../images/arrowdown.png);
+              width: 13px;
+              height: 10px;
+              background-size: contain;
+              background-repeat: no-repeat;            
+            } 
+           }
+            ul.dropdown-menu {
+             position: absolute;
+             background-color: $secondary;
+             padding: 10px 20px;
+             display: none;
+             li {              
+              &:hover {
+                background: $primary;
+              }
+               a {    
+                 &:before {
+                   display: none;
+                 }                         
+                 &:after {
+                   display: none;
+                 }
+               }
+             }
+             &.show {
+               display: block;
+             }
+           }
+           
+         }
+         &#searchButton {
+           width: 80px;
+           height: 80px;
+           padding: 10px;
+           background-color: rgba(253, 193, 31, 0);
+           margin-left: 20px;
+           border-radius: 70px;    
+           cursor: pointer;
+           &:hover {
+             background-color: rgba(253, 193, 31, 0.5);
+           }    
+           .inner {
+             background-color: $secondary;
+             padding: 20px;
+             border-radius: 70px;
+             width: 100%;
+             height: 100%;
+           }   
+                  
+         }       
+         a {
+           color: $tertiary;
+           padding: 10px 20px;
+           margin: 0 20px;
+           font-size: 2.4rem;
+           text-decoration: none;   
+           position: relative;   
+           &.active {
+             font-weight: bold;
+             &:after {
+               width: 80%;
+               left: 0;
+               transform: translateX(10%);
+             }
+           } 
+           &:hover:after {
+             width: 80%;
+             transform: translateX(10%);
+           }
+           &:after {
+             content: '';
+              display: block;
+              position: absolute;
+              width: 0%;
+              height: 3px;
+              background-color: $secondary;
+              left: 0;              
+              bottom: -5px;
+              transition: 300ms;
+           }
+         }
+       }
+     }
+    a.logo {
+      display: flex;
+      align-items: center;
+      img {
+        max-width: 230px;
+        height: auto;
+      }
+    }
+   }
+
+}
+
+
+#searchBox {
+ position: absolute;
+ top: 0;
+ left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0,0,0, 0.9);  
+  display: none;
+  align-items: center;
+  justify-content: center;
+  .search {
+    position: relative;
+    width: 500px;    
+    label {
+      color: $tertiary;
+      position: absolute;
+      font-size: 2rem;
+      top: -10px;     
+      &.d-none {
+        display: none;
+      } 
+    }    
+    input {
+      background-color: transparent;
+      border-bottom: 1px solid $tertiary;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      width: 100%;
+      outline: none;
+      color: $tertiary;
+      font-size: 2rem;    
+      &:focus {
+        label {
+          display: none;
+        }
+      }  
+    }
+  }
+  #buttonClose {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    }
+}
+
+
+section {
+  margin-top: 50px;
+  .container {
+    .formulario {
+      max-width: 50%;
+      width: 100%;
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 100%;
+        input[type=text], input[type=email]{
+          padding-top: 15px;
+          padding-left: 30px;
+          padding-bottom: 15px;
+          border-radius: 50px;
+          margin-top: 30px;
+          border: none;
+          box-shadow: none;
+          outline: none;
+          font-size: 2rem;
+          font-weight: light;
+          width: 50%;
+          &::placeholder {
+            color: $quaternary;
+            font-size: 2rem;
+          }
+        }
+        button {
+          padding: 20px 60px;
+          background-color: $secondary;
+          border-radius: 30px;
+          color: $primary;
+          margin-top: 30px;
+          font-size: 2rem;
+          font-weight: normal;   
+          position: relative;          
+          outline: none;
+          border: none;
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+          &:after {
+            content: '';
+            width: 10px;
+            height: 10px;
+            background-image: url('../images/send.png');
+            display: inline-flex;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin-left: 10px;
+            vertical-align: middle;        
+          }
+        }
+      }
+
+      p {
+        color: $tertiary;
+        font-size: 1.7rem;
+        line-height: 3rem;
+        margin-top: 20px;
+      }
+      h2 {
+        font-size: 8.2rem;
+        color: $tertiary;
+        line-height: 9rem;
+        span {
+          display: block;
+          color: $secondary;
+          font-size: 8.4rem;          
+        }
+      }
+    }
+  }  
+}
