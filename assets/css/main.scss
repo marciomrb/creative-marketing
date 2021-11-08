@@ -35,12 +35,17 @@ header {
   height: 200px;
   display: flex;
   align-items: center;
+  max-width: 100%;
+  width: 100%;
    .container {
      display: flex;
      justify-content: space-between;
      ul.nav {
        display: flex;
        align-items: center;
+       .closeMenu {
+         display: none;
+       }
        li {
          list-style: none; 
          &.dropdown {    

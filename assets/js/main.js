@@ -44,3 +44,19 @@ function SendMessage() {
 }
 
 
+var hambMenu = document.getElementById('hamb-menu');
+var boxMenu = document.querySelector('ul.nav');
+var closeMenu = document.querySelector('img.closeMenu')
+
+hambMenu.addEventListener('click', function() { 
+  if(boxMenu.classList.contains('open') == true) {
+    boxMenu.classList.remove('open');
+  } else {
+    boxMenu.classList.add('open');
+  }
+});
+
+closeMenu.addEventListener('click', function() { 
+  boxMenu.classList.remove('open');
+});
+
