@@ -99,6 +99,14 @@ header .container ul.nav li.dropdown ul.dropdown-menu li:hover {
   background: #20364b;
 }
 
+header .container ul.nav li.dropdown ul.dropdown-menu li a {
+  color: #20364b;
+}
+
+header .container ul.nav li.dropdown ul.dropdown-menu li a:hover {
+  color: #ffffff;
+}
+
 header .container ul.nav li.dropdown ul.dropdown-menu li a:before {
   display: none;
 }
